@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+        //Create a variable "computerSelection" to be the computer's selection
+        var computerSelection = "";
+        //Create a variable "playerSelection" to be the player's selection
+        var playerSelection = "";
+        //Generate a random computer's choice and fill the variable "computerSelection" with it
+        function getComputerChoice() {
+            var choicesArray = ["rock", "paper", "scissors"];
+            var randomNumber = Math.floor(Math.random() * choicesArray.length);
+            return computerSelection = choicesArray[randomNumber];
+        };
+
+        getComputerChoice();
+        console.log(computerSelection);
+    </script>
+</body>
+
+</html>
