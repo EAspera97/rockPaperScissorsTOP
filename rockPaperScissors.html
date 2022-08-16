@@ -8,20 +8,46 @@
 
 <body>
     <script>
-        //Create a variable "computerSelection" to be the computer's selection
-        var computerSelection = "";
-        //Create a variable "playerSelection" to be the player's selection
-        var playerSelection = "";
-        //Generate a random computer's choice and fill the variable "computerSelection" with it
-        function getComputerChoice() {
-            var choicesArray = ["rock", "paper", "scissors"];
-            var randomNumber = Math.floor(Math.random() * choicesArray.length);
-            return computerSelection = choicesArray[randomNumber];
-        };
+            //Create a variable "computerSelection" to be the computer's selection
+            var computerSelection = "";
+            //Create a variable "playerSelection" to be the player's selection
+            var playerSelection = "";
+            //Generate a random computer's choice and fill the variable "computerSelection" with it
+            function playRound(playerSelection, computerSelection) {
+                console.log(playerSelection);
+                console.log(computerSelection);
+                if (playerSelection === computerSelection) {
+                    return "It's a tie!";
+                } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    return "You lose, Paper beats Rock!"
+                } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                    return "You lose, Scissors beats Paper!"
+                } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                    return "You lose, Rock beats Scissors!"
+                } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    return "You won, Rock beats Scissors!"
+                } else if (playerSelection === "paper" && computerSelection === "rock") {
+                    return "You won, Paper beats Rock!"
+                } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                    return "You won, Scissors beats Paper!"
+                } else {
+                    return "You enter an invalid option!"
+                }
+            }
 
-        getComputerChoice();
-        console.log(computerSelection);
-    </script>
+            function getComputerChoice() {
+                var choicesArray = ["rock", "paper", "scissors"];
+                var randomNumber = Math.floor(Math.random() * choicesArray.length);
+                return computerSelection = choicesArray[randomNumber];
+            }
+
+            function getPlayerChoice(){
+                playerSelection = prompt("Please enter an option");
+                playerSelection.toLowerCase();
+                return playerSelection;
+            }
+
+        </script>
 </body>
 
 </html>
