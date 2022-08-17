@@ -14,8 +14,8 @@
             var playerSelection = "";
             //Generate a random computer's choice and fill the variable "computerSelection" with it
             function playRound(playerSelection, computerSelection) {
-                console.log(playerSelection);
-                console.log(computerSelection);
+                playerSelection = getPlayerChoice();
+                computerSelection = getComputerChoice();
                 if (playerSelection === computerSelection) {
                     return "It's a tie!";
                 } else if (playerSelection === "rock" && computerSelection === "paper") {
@@ -46,6 +46,8 @@
                 playerSelection.toLowerCase();
                 return playerSelection;
             }
+
+            console.log(playRound());
 
         </script>
 </body>
