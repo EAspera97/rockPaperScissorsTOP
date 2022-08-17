@@ -9,14 +9,14 @@
 <body>
     <script>
             // Create a variable "computerSelection" to be the computer's selection, to be modified in game.
-                var computerSelection = "";
+                let computerSelection = "";
                 // Create a variable "playerSelection" to be the player's selection, to be modified in game.
-                var playerSelection = "";
+                let playerSelection = "";
                 // Create a variable that counts how many times the computer wins
-                var computerWin = 0;
+                let computerWin = 0;
                 // Create a variable that counts how many times the player wins
-                var playerWin = 0;
-                
+                let playerWin = 0;
+
                 function game() {
                     for (let i = 0; i < 5; i++) {
                         console.log(playRound());
@@ -61,8 +61,8 @@
 
                 // Generate a random computer's choice from the array of options and fill the variable "computerSelection" with it.
                 function getComputerChoice() {
-                    var choicesArray = ["rock", "paper", "scissors"];
-                    var randomNumber = Math.floor(Math.random() * choicesArray.length);
+                    const choicesArray = ["rock", "paper", "scissors"];
+                    let randomNumber = Math.floor(Math.random() * choicesArray.length);
                     return computerSelection = choicesArray[randomNumber];
                 }
 
