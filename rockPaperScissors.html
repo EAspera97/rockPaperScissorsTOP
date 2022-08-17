@@ -8,41 +8,60 @@
 
 <body>
     <script>
-            //Create a variable "computerSelection" to be the computer's selection
+            // Create a variable "computerSelection" to be the computer's selection, to be modified in game.
             var computerSelection = "";
-            //Create a variable "playerSelection" to be the player's selection
+            // Create a variable "playerSelection" to be the player's selection, to be modified in game.
             var playerSelection = "";
-            //Generate a random computer's choice and fill the variable "computerSelection" with it
+            // Create a variable that counts how many times the computer wins
+            var computerWin = 0;
+            // Create a variable that counts how many times the player wins
+            var playerWin = 0;
+
+            //function game() {
+              //      for (let i = 0; i < 5; i++) {
+                        // your code here!
+                //    }
+                //}
+            
+            
+            
+            //Function that plays one round of the game.
             function playRound(playerSelection, computerSelection) {
                 playerSelection = getPlayerChoice();
                 computerSelection = getComputerChoice();
-                console.log(playerSelection);
-                console.log(computerSelection);
                 if (playerSelection === computerSelection) {
                     return "It's a tie!";
                 } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    computerWin++;
                     return "You lose, Paper beats Rock!"
                 } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                    computerWin++;
                     return "You lose, Scissors beats Paper!"
                 } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                    computerWin++;
                     return "You lose, Rock beats Scissors!"
                 } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    playerWin++;
                     return "You won, Rock beats Scissors!"
                 } else if (playerSelection === "paper" && computerSelection === "rock") {
+                    playerWin++;
                     return "You won, Paper beats Rock!"
                 } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                    playerWin++;
                     return "You won, Scissors beats Paper!"
                 } else {
                     return "You enter an invalid option!"
                 }
             }
 
+            // Generate a random computer's choice from the array of options and fill the variable "computerSelection" with it.
             function getComputerChoice() {
                 var choicesArray = ["rock", "paper", "scissors"];
                 var randomNumber = Math.floor(Math.random() * choicesArray.length);
                 return computerSelection = choicesArray[randomNumber];
             }
 
+            // Get's the players choice from the input provided.
             function getPlayerChoice(){
                 playerInput = prompt("Please enter an option");
                 playerSelection = playerInput.toLowerCase();
@@ -50,6 +69,10 @@
             }
 
             console.log(playRound());
+            console.log(computerWin);
+            console.log(playerWin);
+
+
 
         </script>
 </body>
