@@ -8,74 +8,79 @@
 
 <body>
     <script>
-            // Create a variable "computerSelection" to be the computer's selection, to be modified in game.
-                let computerSelection = "";
-                // Create a variable "playerSelection" to be the player's selection, to be modified in game.
-                let playerSelection = "";
-                // Create a variable that counts how many times the computer wins
-                let computerWin = 0;
-                // Create a variable that counts how many times the player wins
-                let playerWin = 0;
+        // Create a variable "computerSelection" to be the computer's selection, to be modified in game.
+        let computerSelection = "";
 
-                function game() {
-                    for (let i = 0; i < 5; i++) {
-                        console.log(playRound());
-                    }
-                    if (playerWin > computerWin){
-                        console.log("You won this game!")
-                    } else if (computerWin > playerWin){
-                        console.log("Computer win this game!")
-                    } else {
-                        console.log("It's a tie!")
-                    }
-                }
+        // Create a variable "playerSelection" to be the player's selection, to be modified in game.
+        let playerSelection = "";
 
-                //Function that plays one round of the game.
-                function playRound(playerSelection, computerSelection) {
-                    playerSelection = getPlayerChoice();
-                    computerSelection = getComputerChoice();
-                    if (playerSelection === computerSelection) {
-                        return "You are tied this round!";
-                    } else if (playerSelection === "rock" && computerSelection === "paper") {
-                        computerWin++;
-                        return "You lose, Paper beats Rock!"
-                    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-                        computerWin++;
-                        return "You lose, Scissors beats Paper!"
-                    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-                        computerWin++;
-                        return "You lose, Rock beats Scissors!"
-                    } else if (playerSelection === "rock" && computerSelection === "scissors") {
-                        playerWin++;
-                        return "You won, Rock beats Scissors!"
-                    } else if (playerSelection === "paper" && computerSelection === "rock") {
-                        playerWin++;
-                        return "You won, Paper beats Rock!"
-                    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-                        playerWin++;
-                        return "You won, Scissors beats Paper!"
-                    } else {
-                        return "You enter an invalid option!"
-                    }
-                }
+        // Create a variable that counts how many times the computer wins.
+        let computerWin = 0;
 
-                // Generate a random computer's choice from the array of options and fill the variable "computerSelection" with it.
-                function getComputerChoice() {
-                    const choicesArray = ["rock", "paper", "scissors"];
-                    let randomNumber = Math.floor(Math.random() * choicesArray.length);
-                    return computerSelection = choicesArray[randomNumber];
-                }
+        // Create a variable that counts how many times the player wins.
+        let playerWin = 0;
 
-                // Get's the players choice from the input provided.
-                function getPlayerChoice() {
-                    playerInput = prompt("Please enter an option");
-                    playerSelection = playerInput.toLowerCase();
-                    return playerSelection;
-                }
+        // Function that plays a full set of game and after 5 rounds display the winner.
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                console.log(playRound());
+            }
+            if (playerWin > computerWin) {
+                console.log("You won this game!")
+            } else if (computerWin > playerWin) {
+                console.log("Computer win this game!")
+            } else {
+                console.log("It's a tie!")
+            }
+        }
 
-                game();
+        // Function that plays one round of the game.
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = getPlayerChoice();
+            computerSelection = getComputerChoice();
+            if (playerSelection === computerSelection) {
+                return "You are tied this round!";
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                computerWin++;
+                return "You lose, Paper beats Rock!"
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                computerWin++;
+                return "You lose, Scissors beats Paper!"
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                computerWin++;
+                return "You lose, Rock beats Scissors!"
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                playerWin++;
+                return "You won, Rock beats Scissors!"
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                playerWin++;
+                return "You won, Paper beats Rock!"
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                playerWin++;
+                return "You won, Scissors beats Paper!"
+            } else {
+                return "You enter an invalid option!"
+            }
+        }
 
-        </script>
+        // Generate a random computer's choice from the array of options and fill the variable "computerSelection" with it.
+        function getComputerChoice() {
+            const choicesArray = ["rock", "paper", "scissors"];
+            let randomNumber = Math.floor(Math.random() * choicesArray.length);
+            return computerSelection = choicesArray[randomNumber];
+        }
+
+        // Get's the players choice from the input provided.
+        function getPlayerChoice() {
+            playerInput = prompt("Please enter an option");
+            playerSelection = playerInput.toLowerCase();
+            return playerSelection;
+        }
+
+        // Call the game function to start the game.
+        game();
+
+    </script>
 </body>
 
 </html>
