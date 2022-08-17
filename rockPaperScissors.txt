@@ -1,7 +1,0 @@
-Rock Paper Scisssors Game
-Create a variable a to be computers choice
-Create a variable b to be the users choice
-Generate a random computers choice and fill the variable a with it
-Ask the user for its choice and fill the variable b with it
-Compare both choices within an if statement
-Return the corresponding message to the user
