@@ -16,6 +16,8 @@
             function playRound(playerSelection, computerSelection) {
                 playerSelection = getPlayerChoice();
                 computerSelection = getComputerChoice();
+                console.log(playerSelection);
+                console.log(computerSelection);
                 if (playerSelection === computerSelection) {
                     return "It's a tie!";
                 } else if (playerSelection === "rock" && computerSelection === "paper") {
@@ -42,8 +44,8 @@
             }
 
             function getPlayerChoice(){
-                playerSelection = prompt("Please enter an option");
-                playerSelection.toLowerCase();
+                playerInput = prompt("Please enter an option");
+                playerSelection = playerInput.toLowerCase();
                 return playerSelection;
             }
 
